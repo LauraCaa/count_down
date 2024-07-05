@@ -1,0 +1,8 @@
+services:
+  count_down:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/opt/count_down"
+      - "/opt/count_down/node_modules"
