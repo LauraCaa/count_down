@@ -43,16 +43,23 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-#count-down-container{
-    display: grid;
+html body{
+    height: 100%;
     font-family: sans-serif;
-    grid-template-columns: 100%;
+}
+#main-container{
+    height: 100vh;
+}
+#count-down-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
     text-align: center;
 }
-#count-down-display img{
-    max-width: 126px;
-    margin: 40px;
+#count-down-display{
+    margin-top: 100px;
 }
 #count-down-display #timer{
     font-family: "Patrick Hand", sans-serif;
@@ -61,15 +68,18 @@ table {
     letter-spacing: 5px;
 }
 #count-down-display #description{
-    margin: 20px;
+   margin: 20px;
 }
-
+#count-down-display img{
+    margin: 40px;
+    max-width: 126px;
+}
 #count-down-actions{
-    vertical-align: baseline;
+    margin-top: 120px;
 }
 #count-down-actions button{
     background-color: black;
-    border-radius: 20px;
+    border-radius: 30px;
     color: white;
-    padding: 15px 25px;
+    padding: 20px 30px;
 }

@@ -10,9 +10,11 @@ export default function Home() {
     setIsRunning(value)
   };
   return (
-    <div id="count-down-container">
-      <Display isRunning={isRunning} upDateRunning={upDateRunning}></Display>
-      <Actions isRunning={isRunning} upDateRunning={upDateRunning}></Actions>
+    <div id="main-container">
+      <div id="count-down-container">
+          <Display isRunning={isRunning} upDateRunning={upDateRunning}></Display>
+          <Actions isRunning={isRunning} upDateRunning={upDateRunning}></Actions>
+      </div>
     </div>
   )
 };

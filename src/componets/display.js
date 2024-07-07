@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react";
 
 export default function Display({isRunning, upDateRunning}) {
-    const[timer, setTimer]= useState(60);
+    const[timer, setTimer]= useState(3600);
     const[isDone, setIsDone] = useState(false);
 
     useEffect(() => {
@@ -21,18 +21,15 @@ export default function Display({isRunning, upDateRunning}) {
             upDateRunning(false);
         }
     },[timer])
+    const minutes = Math.floor(timer / 60);
+    const seconds = timer % 60;
 
-    // useEffect(() => {
-    //     console.log("me ejecuto tan pronto como inicia el efecto")
-    //     return () => {
-    //         console.log("me ejecuto si algo cambia para matar el proceso")
-    //     }
-    // },[])
+    const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
     return(
         <div id="count-down-display">
             <img src="/chicken.png" alt="chicken-img"/>
-            <p id="timer">{timer}</p>
+            <p id="timer">{formattedTime}</p>
             <p id="description">Chicken is growing...</p>
         </div>
     )
